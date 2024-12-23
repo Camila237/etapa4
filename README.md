@@ -42,3 +42,49 @@ Para ejecutar la aplicación en un emulador o dispositivo físico, usa el siguie
 ```sh
 flutter run
 ```
+
+## Ejemplo de uso
+```dart
+import 'package:flutter/material.dart';
+import 'package:etapa4/templates/card_template/profile_card_template.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Ejemplo de Profile Card'),
+        ),
+        body: Center(
+          child: ProfileCard(
+            colorText: Colors.black,
+            colorCard: Colors.white,
+            name: 'John Doe',
+            email: 'john.doe@example.com',
+            description: 'Software Developer at XYZ Company',
+            imageUrl: 'https://example.com/profile.jpg',
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### Respuesta esperada 
+
+Al ejecutar el código anterior, deberías ver una tarjeta de perfil con la siguiente información:  
+
+- Nombre: John Doe
+- Correo electrónico: john.doe@example.com
+- Descripción: Software Developer at XYZ Company
+- Imagen: La imagen de perfil cargada desde la URL proporcionada
+
+La tarjeta tendrá los bordes redondeados, en la parte izquierda de la tarrjeta se verá la imagen de perfil y en la parte derecha se verá el nombre, correo electrónico y descripción. El nombre estará en negrita, mientras que el correo electrónico y la descripción estarán en estilo normal.
